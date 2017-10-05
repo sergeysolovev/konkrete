@@ -1,0 +1,131 @@
+@import './fonts/fonts.less';
+
+@theme-color: #211F20;
+@theme-alt-color: #AC975E;
+@theme-white-color: #FFFFFF;
+
+html, body {
+  height: 100%;
+}
+
+body {
+  background: @theme-color;
+  color: @theme-white-color;
+  font-family: 'Circe', content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 36px;
+}
+
+.logo {
+  background: url(./images/coaster01.svg) center no-repeat;
+  width: 330px;
+  height: 330px;
+}
+
+.lead {
+  margin: 72px 0px;
+}
+
+.lead h2 {
+  font-size: 56px;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  padding-top: 3px;
+  margin: 0;
+}
+
+.icons {
+  display: flex;
+  justify-content: center;
+}
+
+.icons a {
+  margin: 0px 16px;
+  height: 64px;
+}
+
+.icons a svg {
+  width: 64px;
+}
+
+.icons a path {
+  fill: @theme-white-color;
+}
+
+.icons a:hover path {
+  fill: @theme-alt-color;
+}
+
+@media (max-width: 499px) and (orientation: portrait), (max-height: 693px) and (min-height: 450px) {
+  .lead {
+    margin-top: 24px;
+    margin-bottom: 60px;
+  }
+
+  .lead h2 {
+    font-size: 28px;
+  }
+
+  .icons a {
+    margin: 0px 12px;
+    height: 48px;
+  }
+
+  .icons a svg {
+    width: 48px;
+  }
+
+  .logo {
+    width: 220px;
+    height: 220px;
+  }
+}
+
+@media (max-height: 449px) and (orientation: landscape) {
+  .container {
+    width: 100%;
+    flex-direction: row;
+  }
+
+  .logo {
+    flex-shrink: 0;
+    height: 200px;
+    width: 200px;
+  }
+
+  .lead {
+    margin-left: 24px;
+    margin-right: 24px;
+    display: flex;
+    align-items: flex-start;
+  }
+
+  .lead h2 {
+    font-size: 28px;
+  }
+
+  .icons {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+  }
+
+  .icons a {
+    margin: 12px 0px;
+    height: 48px;
+  }
+
+  .icons a svg {
+    width: 48px;
+  }
+}
