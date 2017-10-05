@@ -10,7 +10,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start:dev": "cross-env NODE_ENV=development webpack-dev-server --env=dev --progress --profile --colors",
-    "start": "serve dist",
+    "start": "serve -c 31536000000 dist",
+    "serve:help": "serve --help",
     "build": "cross-env NODE_ENV=production webpack --env=prod --profile --colors --progress"
   },
   "author": "Sergey Solovev",
@@ -35,6 +36,7 @@
     "less-loader": "4.0.5",
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.6",
+    "serve": "^6.2.0",
     "style-loader": "0.18.2",
     "uglifyjs-webpack-plugin": "0.4.6",
     "webpack": "^3.6.0",
