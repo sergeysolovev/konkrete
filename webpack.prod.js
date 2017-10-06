@@ -75,7 +75,21 @@ const config = {
         })
       },
       {
-        test: /\.(ico|png|svg|woff|woff2|eot|ttf|otf)$/,
+        test: /\.(png|svg)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'static/media/[name].[hash:8].[ext]'
+            }
+          },
+          {
+            loader: 'image-webpack-loader'
+          }
+        ]
+      },
+      {
+        test: /\.(ico|woff|woff2|eot|ttf|otf)$/,
         use: {
           loader: 'file-loader',
           options: {
