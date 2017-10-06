@@ -8,6 +8,7 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
+const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 const publicPath = process.env.PUBLIC_PATH || '/';
 const publicUrl = publicPath.slice(0, -1);
@@ -115,6 +116,7 @@ const config = {
     new HtmlWebpackPlugin({
       inject: true,
       template: 'public/index.html',
+      inlineSource: '.(css|js)$',
       minify: {
         removeComments: true,
         collapseWhitespace: true,
@@ -128,6 +130,7 @@ const config = {
         minifyURLs: true,
       }
     }),
+    new HtmlWebpackInlineSourcePlugin(),
     new CopyWebpackPlugin([
         {from: 'public/favicons'},
         {from: 'public'}
