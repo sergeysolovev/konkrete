@@ -60,13 +60,7 @@ const config = {
                 plugins: () => [
                   require('postcss-flexbugs-fixes'),
                   autoprefixer({
-                    browsers: [
-                      '>1%',
-                      'last 4 versions',
-                      'Firefox ESR',
-                      'not ie < 9',
-                    ],
-                    flexbox: 'no-2009',
+                    flexbox: 'no-2009'
                   }),
                 ],
               },
@@ -115,7 +109,7 @@ const config = {
     }),
     new HtmlWebpackPlugin({
       inject: true,
-      template: 'public/index.html',
+      template: 'src/index.ejs',
       inlineSource: '.(css|js)$',
       minify: {
         removeComments: true,
@@ -134,10 +128,7 @@ const config = {
     new CopyWebpackPlugin([
         {from: 'public/favicons'},
         {from: 'public'}
-      ],
-      {
-        ignore: 'public/index.html'
-      }
+      ]
     ),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.LoaderOptionsPlugin({

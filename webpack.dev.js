@@ -63,13 +63,7 @@ const config = {
                 plugins: () => [
                   require('postcss-flexbugs-fixes'),
                   autoprefixer({
-                    browsers: [
-                      '>1%',
-                      'last 4 versions',
-                      'Firefox ESR',
-                      'not ie < 9',
-                    ],
-                    flexbox: 'no-2009',
+                    flexbox: 'no-2009'
                   }),
                 ],
               },
@@ -102,15 +96,12 @@ const config = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
       inject: true,
-      template: 'public/index.html'
+      template: 'src/index.ejs'
     }),
     new CopyWebpackPlugin([
         {from: 'public/favicons'},
         {from: 'public'}
-      ],
-      {
-        ignore: 'public/index.html'
-      }
+      ]
     ),
     new ExtractTextPlugin({
       filename: '[name].css',
