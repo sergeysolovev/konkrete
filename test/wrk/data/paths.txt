@@ -1,0 +1,3 @@
+/
+/static/media/logo01.svg
+/static/media/circe-regular.woff2
