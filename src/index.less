@@ -6,126 +6,128 @@
 
 html, body {
   height: 100%;
+  font-size: 20px;
 }
 
 body {
   background: @theme-color;
-  color: @theme-white-color;
   font-family: 'Circe', content-sans-serif-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  color: @theme-white-color;
   font-weight: 400;
+  line-height: 1.2;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   display: flex;
+  justify-content: center;
+}
+
+.container {
+  padding: 44px 0px;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 
-.container {
+.content-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    height: 293.6px;
+    width: 408px;
+  }
+}
+
+.content-message {
+  margin: 64px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 50px 36px;
-}
 
-.logo {
-  background: url(./images/coaster01-wolf.svg), url(./images/coaster01-canvas.svg);
-  width: 330px;
-  height: 330px;
-}
+  letter-spacing: .03em;
+  font-size: 1.36rem;
 
-.lead {
-  margin: 72px 0px;
-}
-
-.lead h2 {
-  font-size: 56px;
-  line-height: 1;
-  font-weight: 400;
-  text-transform: uppercase;
-  padding-top: 3px;
-  margin: 0;
+  .down-arrow {
+    fill: @theme-white-color;
+    width: .49em;
+  }
 }
 
 .icons {
   display: flex;
   justify-content: center;
+  align-items: center;
+
+  a {
+    margin: 0px 16px;
+    height: 64px;
+    fill: @theme-white-color;
+
+    &:hover {
+      fill: @theme-alt-color
+    }
+
+    svg {
+      width: 64px;
+    }
+  }
 }
 
-.icons a {
-  margin: 0px 16px;
-  height: 64px;
-}
-
-.icons a svg {
-  width: 64px;
-}
-
-.icons a path {
-  fill: @theme-white-color;
-}
-
-.icons a:hover path {
-  fill: @theme-alt-color;
-}
-
-@media (max-width: 499px) and (orientation: portrait), (max-height: 693px) and (min-height: 450px) {
-  .lead {
-    margin-top: 24px;
-    margin-bottom: 60px;
+@media (max-width: 549px) and (orientation: portrait), (max-height: 699px) and (min-height: 450px) {
+  .content-logo {
+    .logo {
+      width: 248px;
+      height: 178.5px;
+    }
   }
 
-  .lead h2 {
-    font-size: 28px;
+  .content-message {
+    margin: 48px 0;
+    font-size: 0.98rem;
   }
 
-  .icons a {
-    margin: 0px 12px;
-    height: 48px;
-  }
-
-  .icons a svg {
-    width: 48px;
-  }
-
-  .logo {
-    width: 220px;
-    height: 220px;
+  .icons {
+    a {
+      margin: 0px 12px;
+      height: 48px;
+      svg {
+        width: 48px;
+      }
+    }
   }
 }
 
 @media (max-height: 449px) and (orientation: landscape) {
   .container {
     width: 100%;
-    flex-direction: row;
+    flex-wrap: wrap;
   }
 
-  .logo {
-    flex-shrink: 0;
-    height: 200px;
-    width: 200px;
+  .content-logo {
+    flex: 1 0 248px;
+
+    .logo {
+      width: 248px;
+      height: 178.5px;
+    }
   }
 
-  .lead {
-    margin-left: 24px;
-    margin-right: 24px;
-    display: flex;
-    align-items: flex-start;
-  }
-
-  .lead h2 {
-    font-size: 28px;
+  .content-message {
+    margin: 24px 0;
+    font-size: 0.85rem;
   }
 
   .icons {
-    display: flex;
-    flex-direction: column;
-    margin-left: auto;
-  }
+    a {
+      margin: 0 12px;
+      height: 38px;
 
-  .icons a {
-    margin: 12px 0px;
-    height: 48px;
-  }
-
-  .icons a svg {
-    width: 48px;
+      svg {
+        width: 38px;
+      }
+    }
   }
 }
